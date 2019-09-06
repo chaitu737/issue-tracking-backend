@@ -27,7 +27,13 @@ app.get('/',(req,res)=>{
 
 const socketlib = require('./libs/sockelib');
 const tokenlib = require('./libs/tokenlib');
-
+app.all('*', (req, res, next) => {
+    res.append('Access-Control-Allow-Origin' , 'http://localhost:4200');
+      res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+      res.append("Access-Control-Allow-Headers", "Origin, Accept,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+      res.append('Access-Control-Allow-Credentials', true);
+      next();
+    });
 
 app.use(cors());
 

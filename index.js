@@ -1,7 +1,7 @@
 const express = require('express');
 var app = express();
 const router = express.Router();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const User = require('./models/user'); 
 const Issue = require('./models/issue');

@@ -92,7 +92,7 @@ module.exports = (router)=>{
                 
                 User.findOne(conditions,(err,user)=>{
                     if(err){
-                        res.json({success:false, message:err})
+                         res.json({success:false, message:err})
                     }else{
                         if(!user){
                             res.json({success:false, message:'Username or Email is not Found'})
